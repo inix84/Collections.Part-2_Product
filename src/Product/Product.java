@@ -1,4 +1,4 @@
-package product;
+package Product;
 import java.util.Objects;
 public class Product {
     private final String name;

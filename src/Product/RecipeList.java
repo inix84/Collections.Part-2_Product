@@ -1,4 +1,4 @@
-package product;
+package Product;
 import java.util.HashMap;
 import java.util.Map;
 public class RecipeList {

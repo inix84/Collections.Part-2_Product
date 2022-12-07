@@ -1,4 +1,4 @@
-package product;
+package Product;
 public class RecipeException extends RuntimeException{
     public RecipeException() {
     }

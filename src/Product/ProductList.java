@@ -1,4 +1,4 @@
-package product;
+package Product;
 import java.util.*;
 public class ProductList  {
     private final Set<Product> products = new HashSet<>();
