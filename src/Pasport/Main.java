@@ -1,7 +1,7 @@
 package Pasport;
 import java.time.LocalDate;
 public class Main {
-    public static void main(String[] args) //throws PassportException
+    public static void main(String[] args)
     {
         PassportList passportList = new PassportList();
         Passport Pers1 = new Passport(12563239,"Иванов", "Иван", "Иванович", LocalDate.of(1984, 8, 31));
