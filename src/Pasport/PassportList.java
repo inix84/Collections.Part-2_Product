@@ -4,20 +4,19 @@ import java.util.Set;
 
 public class PassportList {
     private final Set<Passport> passports = new HashSet<>();
-    public void addPassport(Passport passport) throws PassportException
-    { if (passport==null){
-        return;
-    }
+         public void addPassport(Passport passport)
+        {
         if (this.passports.contains(passport)) {
-            throw new PassportException("Паспорт с такими данными уже есть");
+            this.passports.add(passport);
+            System.out.println("Данные обновлены");
         } else {
             this.passports.add(passport);
         }
     }
-    public Passport findByNumber(int number) {
+
+      public Passport findByNumber(int number) {
         for (Passport passport : this.passports) {
             if (passport.getNumber() == number) {
-
                 return passport;
                 }
                     }
@@ -29,9 +28,9 @@ public class PassportList {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Список паспортов:").append('\n');
-        for (Passport passport : this.passports) {
+       for (Passport passport : this.passports) {
             stringBuilder.append(passports).append('\n');
         }
-        return stringBuilder.toString();
+       return stringBuilder.toString();
     }
 }
