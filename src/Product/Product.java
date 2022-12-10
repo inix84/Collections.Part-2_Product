@@ -1,0 +1,49 @@
+package Product;
+import java.util.Objects;
+public class Product {
+    private final String name;
+    private final int price;
+    private final int amount;
+    private boolean checked;
+    public Product(String name, int price, int amount) {
+        if (name == null || name.isBlank() || price < 0) {
+            throw new IllegalArgumentException("Заполните карточку товара полностью");
+        }
+        this.amount = amount >= 0 ? amount : 1;
+        this.name = name; // название продукта
+        this.price = price; // цена продукта
+        this.checked = true; // АКТ ПОКУПКИ
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return price == product.price && amount == product.amount && Objects.equals(name, product.name);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price, amount);
+    }
+    @Override
+    public String toString() {
+        String checkedString = this.isChecked() ? "Да" : "Нет";
+        return String.format("%s, Цена: %s, Количество: %s шт., Куплено: %s", this.name,getPrice()
+                ,getAmount(),checkedString);
+    }
+    public String getName() {
+        return name;
+    }
+    public int getPrice() {
+        return price;
+    }
+    public int getAmount() {
+        return amount;
+    }
+    public boolean isChecked() {
+        return checked;
+    }
+    public void setChecked() {
+        this.checked = true;
+    }
+}
